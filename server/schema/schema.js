@@ -51,14 +51,14 @@ const RootQuery = new GraphQLObjectType({
       type: BookType,
       args: { id: { type: GraphQLID } },
       resolve: (parent, args) => {
-        Book.findById(args.id);
+        return Book.findById(args.id);
       }
     },
     author: {
       type: AuthorType,
       args: { id: { type: GraphQLID } },
       resolve: (parent, args) => {
-        Author.findById(args.id);
+        return Author.findById(args.id);
       }
     },
     books: {
